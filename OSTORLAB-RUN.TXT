@@ -9,7 +9,7 @@ In order to be able to get the ostorlab scan run to succeed, I had to
 Finally, the docker swarm would start and the scan would start running for days!
 
 
-ostorlab scan run --install -g agent_group.yaml domain-name wrightbuilt.biz
+ostorlab scan run --install -g agent_group.yaml domain-name pentest.biz
 
 
 It produced a lot of output, and my computer got very busy with 12 docker containers
@@ -27,7 +27,7 @@ ostorlab scan list
 ┌────┬─────────────────┬────────────────────────────┬──────────┐
 │ Id │ Asset           │ Created Time               │ Progress │
 ╞════╪═════════════════╪════════════════════════════╪══════════╡
-│ 1  │ wrightbuilt.biz │ 2024-01-19 14:08:24.518675 │ Running  │
+│ 1  │ pentest.biz │ 2024-01-19 14:08:24.518675 │ Running  │
 └────┴─────────────────┴────────────────────────────┴──────────┘
 
 
@@ -50,7 +50,7 @@ having that many ports open would not expose some kind of vulnerability, but kud
 ┌────┬───────────────────┬─────────────────────────────────────────────────────────────────────┬─────────────┬────────────────┬──────────────────────────────────────────────────────────────────────┐
 │ Id │ Title             │ Vulnerable target                                                   │ Risk rating │ CVSS V3 Vector │ Short Description                                                    │
 ╞════╪═══════════════════╪═════════════════════════════════════════════════════════════════════╪═════════════╪════════════════╪══════════════════════════════════════════════════════════════════════╡
-│ 1  │ Network Port Scan │ Domain: wrightbuilt.biz PORT: 21                                    │ Info        │                │ List of open network ports.                                          │
+│ 1  │ Network Port Scan │ Domain: pentest.biz PORT: 21                                    │ Info        │                │ List of open network ports.                                          │
 │    │                   │ PORT: 22                                                            │             │                │                                                                      │
 │    │                   │ PORT: 25                                                            │             │                │                                                                      │
 │    │                   │ PORT: 26                                                            │             │                │                                                                      │
@@ -70,16 +70,16 @@ having that many ports open would not expose some kind of vulnerability, but kud
 
 All the other hosts for the domain, showed almost identical ports.
 
-│ 1  │ Network Port Scan │ Domain: wrightbuilt.biz PORT: 21                                    │ Info        │                │ List of open network ports.                                          │
-│ 2  │ Network Port Scan │ Domain: cpcontacts.wrightbuilt.biz PORT: 21                         │ Info        │                │ List of open network ports.                                          │
-│ 3  │ Network Port Scan │ Domain: cpcalendars.wrightbuilt.biz PORT: 21                        │ Info        │                │ List of open network ports.                                          │
-│ 4  │ Network Port Scan │ Domain: mail.wrightbuilt.biz PORT: 21                               │ Info        │                │ List of open network ports.                                          │
-│ 5  │ Network Port Scan │ Domain: autodiscover.wrightbuilt.biz PORT: 21                       │ Info        │                │ List of open network ports.                                          │
-│ 6  │ Network Port Scan │ Domain: webdisk.wrightbuilt.biz PORT: 21                            │ Info        │                │ List of open network ports.                                          │
-│ 7  │ Network Port Scan │ Domain: webmail.wrightbuilt.biz PORT: 21                            │ Info        │                │ List of open network ports.                                          │
-│ 8  │ Network Port Scan │ Domain: cpanel.wrightbuilt.biz PORT: 21                             │ Info        │                │ List of open network ports.                                          │
-│ 9  │ Network Port Scan │ Domain: www.wrightbuilt.biz PORT: 21                                │ Info        │                │ List of open network ports.                                          │
+│ 1  │ Network Port Scan │ Domain: pentest.biz PORT: 21                                    │ Info        │                │ List of open network ports.                                          │
+│ 2  │ Network Port Scan │ Domain: cpcontacts.pentest.biz PORT: 21                         │ Info        │                │ List of open network ports.                                          │
+│ 3  │ Network Port Scan │ Domain: cpcalendars.pentest.biz PORT: 21                        │ Info        │                │ List of open network ports.                                          │
+│ 4  │ Network Port Scan │ Domain: mail.pentest.biz PORT: 21                               │ Info        │                │ List of open network ports.                                          │
+│ 5  │ Network Port Scan │ Domain: autodiscover.pentest.biz PORT: 21                       │ Info        │                │ List of open network ports.                                          │
+│ 6  │ Network Port Scan │ Domain: webdisk.pentest.biz PORT: 21                            │ Info        │                │ List of open network ports.                                          │
+│ 7  │ Network Port Scan │ Domain: webmail.pentest.biz PORT: 21                            │ Info        │                │ List of open network ports.                                          │
+│ 8  │ Network Port Scan │ Domain: cpanel.pentest.biz PORT: 21                             │ Info        │                │ List of open network ports.                                          │
+│ 9  │ Network Port Scan │ Domain: www.pentest.biz PORT: 21                                │ Info        │                │ List of open network ports.                                          │
 │ 10 │ Network Port Scan │ Domain: ns3031.hostgator.com PORT: 21                               │ Info        │                │ List of open network ports.                                          │
-│ 11 │ Network Port Scan │ Domain: localhost.wrightbuilt.biz PORT: 5000                        │ Info        │                │ List of open network ports.                                          │
-│ 12 │ Network Port Scan │ Domain: ftp.wrightbuilt.biz PORT: 21                                │ Info        │                │ List of open network ports.                                          │
+│ 11 │ Network Port Scan │ Domain: localhost.pentest.biz PORT: 5000                        │ Info        │                │ List of open network ports.                                          │
+│ 12 │ Network Port Scan │ Domain: ftp.pentest.biz PORT: 21                                │ Info        │                │ List of open network ports.                                          │
 │ 13 │ Network Port Scan │ Domain: ns3032.hostgator.com PORT: 21                               │ Info        │                │ List of open network ports.                                          │
