@@ -1,0 +1,93 @@
+    1  free -h
+    2  lscpu
+    3  nmap -vv 10.10.142.22
+    4  echo fleeb juic
+    5  echo fleeb juice
+    6  lsblk
+    7  rsync Music/ /run/media/keith/7CB1-16F8/ -naP
+    8  rsync Music/ /run/media/keith/7CB1-16F8/ -aP
+    9  sync
+   10  sudo sync
+   11  sudo lsof /run/media/keith/7CB1-16F8/
+   12  df -h
+   13  ls
+   14  cd Music 
+   15  dnf search dropbox
+   16  cd
+   17  ls
+   18  cd Downloads/
+   19  ls
+   20  cd dropb
+   21  ls
+   22  sudo cp -r usr /
+   23  find 
+   24  find /usr/share/naut*
+   25  dropbox
+   26  dropbox autostart
+   27  dropbox autostart -y
+   28  cd
+   29  ls
+   30  ls -a
+   31  cd dropb
+   32  ls
+   33  cd Downloads/
+   34  ls
+   35  cd dropb/
+   36  ls
+   37  sudo -i
+   38  TH IS IS OK
+   39   ostorlab scan run --install -g agent_group.yaml domain-name wrightbuilt.biz
+   40  cd Git/KEV/
+   41   ostorlab scan run --install -g agent_group.yaml domain-name wrightbuilt.biz
+   42  sudo ip addr del 2600:8801:8d0a:2400:fc33:67e9:e082:3265 dev enp2s0
+   43  ip a
+   44  sudo ip link set enp2s0 down
+   45  ip a
+   46   ostorlab scan run --install -g agent_group.yaml domain-name wrightbuilt.biz
+   47  ip a
+   48  sudo ip link set enp2s0 up
+   49   ostorlab scan run --install -g agent_group.yaml domain-name wrightbuilt.biz
+   50  grep "docker swarm" -R .
+   51  grep "swarm" -R .
+   52  ip a
+   53  sudo -i
+   54   ostorlab scan run --install -g agent_group.yaml domain-name wrightbuilt.biz
+   55  ld
+   56  ls
+   57   ostorlab scan lsit
+   58   ostorlab scan list
+   59   ostorlab vulnz list -s 1
+   60   ostorlab scan list
+   61   ostorlab vulnz list -s 1
+   62   ostorlab scan list
+   63  sudo wireshark
+   64   ostorlab vulnz list -s 1
+   65   ostorlab scan list
+   66   ostorlab vulnz list -s 1
+   67   ostorlab scan list
+   68   ostorlab vulnz list -s 1
+   69   ostorlab scan list
+   70   ostorlab vulnz list -s 1
+   71   ostorlab scan list
+   72   ostorlab vulnz list -s 1
+   73   ostorlab scan list
+   74   ostorlab vulnz list -s 1
+   75   ostorlab scan list
+   76   ostorlab vulnz list -s 1
+   77   ostorlab scan list
+   78   ostorlab vulnz list -s 1
+   79  grep ' 26
+   80  grep ' 26' /etc/services 
+   81  grep ' 26 ' /etc/services 
+   82  grep ' 26\t' /etc/services 
+   83  grep ' 26' /etc/services 
+   84  less /etc/services
+   85  nc wrightbuilt.biz 26
+   86  nc wrightbuilt.biz 25
+   87  sudo nmap wrightbuilt.biz
+   88  sudo nmap -A wrightbuilt.biz
+   89  history
+   90  sudo -i
+   91   ostorlab scan list
+   92   ostorlab vulnz list -s 1
+   93  history > KEV-WRIGHTBUILT-HISTORY.TXT

@@ -1,0 +1,85 @@
+In order to be able to get the ostorlab scan run to succeed, I had to 
+1. clone the git repo: https://github.com/Ostorlab/KEV
+2. use pip to install ostorlab
+3. install docker
+4. delete an IPv6 address
+5. #  --live-restore \ in /etc/sysconfig}/docker
+6. start/restart docker
+
+Finally, the docker swarm would start and the scan would start running for days!
+
+
+ostorlab scan run --install -g agent_group.yaml domain-name wrightbuilt.biz
+
+
+It produced a lot of output, and my computer got very busy with 12 docker containers
+running with each having a virtual network interface. Running the following will show 
+the status of any scans running:
+
+
+ostorlab scan list
+
+
+🔸 WARNING: Local runtime ignores scan list pagination
+✔ Scans listed successfully.
+                                                                
+                        Showing 1 Scans                         
+┌────┬─────────────────┬────────────────────────────┬──────────┐
+│ Id │ Asset           │ Created Time               │ Progress │
+╞════╪═════════════════╪════════════════════════════╪══════════╡
+│ 1  │ wrightbuilt.biz │ 2024-01-19 14:08:24.518675 │ Running  │
+└────┴─────────────────┴────────────────────────────┴──────────┘
+
+
+To see what Known Exploitable Vulnerabilities were present, I ran the following command, but the output never changed after only a 
+few hours:
+
+
+ostorlab vulnz list -s 1
+
+
+Here's the output, which looks redundant, but it shows different hosts and ports they had open. Surprising somewhat to me that 
+having that many ports open would not expose some kind of vulnerability, but kudos to the hosting provider for that. 
+
+
+
+
+🔹 Fetching vulnerabilities for scan 1
+                                                                                                                                                                                                      
+                                                                                  Scan 1: Found 13 vulnerabilities.                                                                                   
+┌────┬───────────────────┬─────────────────────────────────────────────────────────────────────┬─────────────┬────────────────┬──────────────────────────────────────────────────────────────────────┐
+│ Id │ Title             │ Vulnerable target                                                   │ Risk rating │ CVSS V3 Vector │ Short Description                                                    │
+╞════╪═══════════════════╪═════════════════════════════════════════════════════════════════════╪═════════════╪════════════════╪══════════════════════════════════════════════════════════════════════╡
+│ 1  │ Network Port Scan │ Domain: wrightbuilt.biz PORT: 21                                    │ Info        │                │ List of open network ports.                                          │
+│    │                   │ PORT: 22                                                            │             │                │                                                                      │
+│    │                   │ PORT: 25                                                            │             │                │                                                                      │
+│    │                   │ PORT: 26                                                            │             │                │                                                                      │
+│    │                   │ PORT: 53                                                            │             │                │                                                                      │
+│    │                   │ PORT: 80                                                            │             │                │                                                                      │
+│    │                   │ PORT: 110                                                           │             │                │                                                                      │
+│    │                   │ PORT: 135                                                           │             │                │                                                                      │
+│    │                   │ PORT: 139                                                           │             │                │                                                                      │
+│    │                   │ PORT: 143                                                           │             │                │                                                                      │
+│    │                   │ PORT: 443                                                           │             │                │                                                                      │
+│    │                   │ PORT: 445                                                           │             │                │                                                                      │
+│    │                   │ PORT: 465                                                           │             │                │                                                                      │
+│    │                   │ PORT: 587                                                           │             │                │                                                                      │
+│    │                   │ PORT: 993                                                           │             │                │                                                                      │
+│    │                   │ PORT: 995                                                           │             │                │                                                                      │
+│    │                   │ PORT: 3306                                                          │             │                │                                                                      │
+
+All the other hosts for the domain, showed almost identical ports.
+
+│ 1  │ Network Port Scan │ Domain: wrightbuilt.biz PORT: 21                                    │ Info        │                │ List of open network ports.                                          │
+│ 2  │ Network Port Scan │ Domain: cpcontacts.wrightbuilt.biz PORT: 21                         │ Info        │                │ List of open network ports.                                          │
+│ 3  │ Network Port Scan │ Domain: cpcalendars.wrightbuilt.biz PORT: 21                        │ Info        │                │ List of open network ports.                                          │
+│ 4  │ Network Port Scan │ Domain: mail.wrightbuilt.biz PORT: 21                               │ Info        │                │ List of open network ports.                                          │
+│ 5  │ Network Port Scan │ Domain: autodiscover.wrightbuilt.biz PORT: 21                       │ Info        │                │ List of open network ports.                                          │
+│ 6  │ Network Port Scan │ Domain: webdisk.wrightbuilt.biz PORT: 21                            │ Info        │                │ List of open network ports.                                          │
+│ 7  │ Network Port Scan │ Domain: webmail.wrightbuilt.biz PORT: 21                            │ Info        │                │ List of open network ports.                                          │
+│ 8  │ Network Port Scan │ Domain: cpanel.wrightbuilt.biz PORT: 21                             │ Info        │                │ List of open network ports.                                          │
+│ 9  │ Network Port Scan │ Domain: www.wrightbuilt.biz PORT: 21                                │ Info        │                │ List of open network ports.                                          │
+│ 10 │ Network Port Scan │ Domain: ns3031.hostgator.com PORT: 21                               │ Info        │                │ List of open network ports.                                          │
+│ 11 │ Network Port Scan │ Domain: localhost.wrightbuilt.biz PORT: 5000                        │ Info        │                │ List of open network ports.                                          │
+│ 12 │ Network Port Scan │ Domain: ftp.wrightbuilt.biz PORT: 21                                │ Info        │                │ List of open network ports.                                          │
+│ 13 │ Network Port Scan │ Domain: ns3032.hostgator.com PORT: 21                               │ Info        │                │ List of open network ports.                                          │
